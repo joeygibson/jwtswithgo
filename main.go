@@ -6,7 +6,7 @@ import (
 	"time"
 )
 
-var secret = "testing"
+var secret = []byte("testing")
 
 func createToken(message string) (string, error) {
 	token := jwt.NewWithClaims(jwt.SigningMethodHS256, jwt.MapClaims{
@@ -20,6 +20,10 @@ func createToken(message string) (string, error) {
 	}
 
 	return tokenString, nil
+}
+
+func validateToken(token string) error {
+	
 }
 
 func main() {
