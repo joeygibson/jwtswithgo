@@ -23,7 +23,7 @@ func createToken(message string) (string, error) {
 }
 
 func validateToken(token string) error {
-	
+	return nil
 }
 
 func main() {
@@ -37,4 +37,8 @@ func main() {
 	}
 
 	logger.Printf("Token: %s\n", token)
+
+	if err := validateToken(token); err != nil {
+		logger.Fatal(err)
+	}
 }
